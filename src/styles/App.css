@@ -1,0 +1,97 @@
+:root {
+  --color-primary: #208080;
+  --color-primary-hover: #1a6565;
+  --color-primary-light: #e6f7f7;
+  --color-background: #f5f7fb;
+  --color-surface: #ffffff;
+  --color-border: #dee2e6;
+  --color-text: #212529;
+  --color-text-secondary: #6c757d;
+}
+
+/* Global override */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* Header */
+.app-header {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-hover) 100%
+  );
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Stat cards */
+.stat-card {
+  border: 1px solid var(--color-border);
+}
+
+.stat-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+/* Product card */
+.product-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.08);
+}
+
+/* Modal backdrop (since we show modal manually) */
+.custom-modal-backdrop {
+  background-color: rgba(15, 23, 42, 0.65);
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Toast overrides */
+.toast-container .toast {
+  min-width: 260px;
+}
+
+/* View toggle buttons */
+.btn-group .btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff !important;
+}
+
+/* Table tweaks */
+.table thead th {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Responsive spacing */
+@media (max-width: 576px) {
+  .app-header .container {
+    padding-inline: 1rem;
+  }
+
+  .stat-value {
+    font-size: 1.2rem;
+  }
+}
